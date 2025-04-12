@@ -1,0 +1,19 @@
+.menu{
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    align-items: center;
+}
+
+a{
+    text-transform: uppercase;
+    font-size: 18px;
+    color: rgb(5, 56, 77);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+}
