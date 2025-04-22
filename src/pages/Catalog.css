@@ -1,0 +1,20 @@
+.catalog h1 {
+    color: darkcyan;
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.catalog .list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos pasen a la siguiente línea si no caben */
+    justify-content: center; /* Centra los productos horizontalmente */
+    gap: 15px; /* Espacio uniforme entre productos */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 0 15px; /* Padding para evitar que toquen los bordes */
+}
+
+.catalog .list .product {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}

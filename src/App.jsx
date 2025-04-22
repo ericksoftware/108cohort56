@@ -1,18 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/footer'
+import Catalog from './pages/Catalog'
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 function App() {
   return (
     <>
+      <Navbar></Navbar>
       <div className="main-content">
-        <Navbar></Navbar>
-        <h1> Hello world from react</h1>
-        <Footer></Footer>
+        <Catalog></Catalog>
       </div>
+      <Footer></Footer>
     </>
   )
 }
