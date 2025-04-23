@@ -49,3 +49,12 @@ export const mock_catalog = [
         "id": 7
     },
 ];
+
+export const mock_categories = [
+    "fruit", 
+    "beverage", 
+    "vehicle", 
+    "electronics", 
+    "food", 
+    "music"];
+

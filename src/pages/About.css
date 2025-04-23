@@ -1,20 +1,75 @@
-.about{
-    background-color: #f0f0f0;
-    padding: 4rem;
-}
-
-.about h2{
+/* About.css */
+.about {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: darkcyan
-}
-
-.about .picture{
-    height: 250px;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-in;
+  }
+  
+  .picture {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border: 1px solid #ccc;
-    margin-bottom: 12px;
-}
-
-.about button{
-    margin-top: 12px;
-}
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    transition: var(--transition);
+  }
+  
+  .picture:hover {
+    transform: scale(1.05);
+  }
+  
+  .about h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about h5 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .about p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    transition: var(--transition);
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-3px);
+    background-color: var(--secondary-color);
+  }
+  
+  .btn {
+    padding: 0.8rem 2rem;
+    transition: var(--transition);
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }

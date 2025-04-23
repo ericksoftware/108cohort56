@@ -4,18 +4,25 @@ import QuantityPicker from './QuantityPicker';
 function Product(props) {
   return (
     <div className="product">
-        <img src={props.data.image}></img>
-      <h3>{props.data.title}</h3>
-
-      <div>
-        <label>Price: ${props.data.price.toFixed(2)}</label>
+      <div className="product-image">
+        <img src={props.data.image} alt={props.data.title} />
       </div>
-
-      <div className="controls">
-      <QuantityPicker></QuantityPicker>
+      
+      <div className="product-info">
+        <h3 className="product-title">{props.data.title}</h3>
+        
+        <div className="product-price">
+          <label>Price: ${props.data.price.toFixed(2)}</label>
+        </div>
+        
+        <div className="product-controls">
+          <QuantityPicker />
+        </div>
+        
+        <div className="product-action">
+          <button className="btn-add-cart">Add to Cart</button>
+        </div>
       </div>
-
-      <button className="btn btn-sm btn-success">Add to Cart</button>
     </div>
   );
 }

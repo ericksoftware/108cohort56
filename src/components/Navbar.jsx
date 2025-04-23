@@ -1,18 +1,16 @@
 import "./Navbar.css";
 
-
 function Navbar() {
     return (
-
-        <nav>
+        <nav className="navbar">
+            <div className="navbar-brand">Mi Sitio</div>
             <div className="menu">
-                <a href="">Log in</a>
-                <a href="">Search</a>
-                <a href="">Subscribe</a>
-                <a href="">Menu</a>
+                <a href="/login" className="nav-link">Log in</a>
+                <a href="/search" className="nav-link">Search</a>
+                <a href="/subscribe" className="nav-link">Subscribe</a>
+                <a href="/menu" className="nav-link active">Menu</a>
             </div>
         </nav>
-
     );
 }
 

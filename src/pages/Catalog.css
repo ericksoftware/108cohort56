@@ -1,20 +1,93 @@
-.catalog h1 {
-    color: darkcyan;
-    text-align: center; /* Centrar el título */
-    margin-bottom: 20px; /* Espacio debajo del título */
-}
-
-.catalog .list {
+/* catalog.css */
+.catalog {
+    padding: 2rem 0;
+    animation: fadeIn 0.8s ease-in;
+  }
+  
+  .catalog h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  .filters {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .filters h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filters button {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+  }
+  
+  .filters button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .product {
+    transition: var(--transition);
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 100%;
     display: flex;
-    flex-wrap: wrap; /* Permite que los productos pasen a la siguiente línea si no caben */
-    justify-content: center; /* Centra los productos horizontalmente */
-    gap: 15px; /* Espacio uniforme entre productos */
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
-    padding: 0 15px; /* Padding para evitar que toquen los bordes */
-}
-
-.catalog .list .product {
-    margin-left: 15px;
-    margin-bottom: 15px;
-}
+    flex-direction: column;
+  }
+  
+  .product-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .product-details {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .product-description {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+  
+  .product-actions {
+    margin-top: auto;
+  }

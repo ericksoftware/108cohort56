@@ -2,21 +2,23 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/footer'
 import Catalog from './pages/Catalog'
+import About from './pages/About';
+import HomePage from './pages/HomePage';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import About from './pages/About';
 
 function App() {
   return (
-    <>
-      <Navbar></Navbar>
-      <div className="main-content">
-        <Catalog></Catalog>
-          <About></About>
+    <div className="app-container">
+      <Navbar />
+      <div className="main-container">
+        <HomePage />
+        <Catalog />
+        <About />
       </div>
-      <Footer></Footer>
-    </>
+      <Footer />
+    </div>
   )
 }
 
