@@ -1,17 +1,21 @@
 import Product from "../components/Product";
 import "./catalog.css";
+import { mock_catalog } from '../assets/services/DaraService';
 
 function Catalog() {
     return (
-        <div className="catalog"> {/* Agrega esta clase al contenedor principal */}
+        <div className="catalog">
             <div className="main-content">
                 <h1>Hello world from react</h1>
                 <div className="list">
-                    <Product />
-                    <Product />
-                    <Product />
-                    <Product />
-                    {/* Puedes agregar más productos para probar */}
+                    {mock_catalog.map((item) => {
+                        return (
+                            <div className="product" key={item.id}>
+                                <Product data={item} />
+                            </div>
+                        );
+                    })}
+
                 </div>
             </div>
         </div>

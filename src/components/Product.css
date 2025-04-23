@@ -23,3 +23,13 @@
     margin: 0; /* Elimina cualquier margen por defecto */
     flex-grow: 1; /* Hace que el título ocupe el espacio restante */
 }
+
+.product img{
+    width: 250px;
+}
+
+.product .controls {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
