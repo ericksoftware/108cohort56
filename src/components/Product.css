@@ -50,6 +50,7 @@
   }
   
   .product-price {
+    display: flex;
     font-weight: bold;
     color: #555;
     margin-bottom: 12px;
