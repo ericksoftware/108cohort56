@@ -10,7 +10,6 @@ function Product(props) {
   const addToCart = useContext(DataContext).addToCart;
 
   function add(){
-    // Add product to cart logic here
     console.log(`Added ${quantity} of ${props.data.title} to cart`);
 
     let prodForCart = {...props.data, quantity};
