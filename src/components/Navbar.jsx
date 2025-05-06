@@ -16,21 +16,23 @@ function Navbar() {
     
     return (
         <nav className="navbar">
-            <div className="navbar-brand">Mi Sitio</div>
+            <div className="navbar-brand">Oxxo</div>
             <div className="menu">
                 <Link to="/home">Home</Link>
                 <Link to="/catalog">Catalog</Link>
                 <Link to="/about">About</Link>
                 <Link to="/admin">Admin</Link>
-                <Link to="/cart">Cart</Link>
             </div>
-            <label className="btn btn-out line-light btn-user">
-                <i className="fa-regular fa-circle-user"></i>{user.userName}
-            </label>
-
-            <Link to="/cart" className="btn btn-outline-light btn-cart">Cart:
-            <span className="badge">{getNumOfProducts()}</span>
-            </Link>
+            
+            <div className="user-section">
+                <span className="btn btn-outline-light btn-user">
+                    <i className="fa-regular fa-circle-user"></i> {user.userName}
+                </span>
+                
+                <Link to="/cart" className="btn btn-outline-light btn-cart">
+                    Cart: <span className="badge">{getNumOfProducts()}</span>
+                </Link>
+            </div>
         </nav>
     );
 }

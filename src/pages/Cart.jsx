@@ -30,32 +30,29 @@ function Cart() {
             {cart.length === 0 ? (
                 <h3 className='alert alert-warning'>Your cart is empty. Go to <Link to="/catalog">Catalog</Link></h3>
             ) : (
-                <>
-                    
-                    <div className='cart-content'>
-                        <div className='list-cart'>
-                            {cart.map((item) => (
-                                <div className='items-cart' key={item.id}>
-                                    <img src={item.image} alt={item.title} />
-                                    <div className='info-cart'>
-                                        <h3>{item.title}</h3>
-                                        <label>Price: ${item.price.toFixed(2)}</label>
-                                        <label>Quantity: {item.quantity}</label>
-                                        <label>Total: ${(item.price * item.quantity).toFixed(2)}</label>
-                                    </div>
-                                    <div className="controls-cart">
-                                        <button className='btn btn-danger' onClick={() => remove(item.id)}>Remove</button>
-                                    </div>
+                <div className='cart-content'>
+                    <div className='list-cart'>
+                        {cart.map((item) => (
+                            <div className='items-cart' key={item.id}>
+                                <img src={item.image} alt={item.title} />
+                                <div className='info-cart'>
+                                    <h3>{item.title}</h3>
+                                    <label>Price: ${item.price.toFixed(2)}</label>
+                                    <label>Quantity: {item.quantity}</label>
+                                    <label>Total: ${(item.price * item.quantity).toFixed(2)}</label>
                                 </div>
-                            ))}
-                            <button className="btn btn-warning" onClick={clear}>Clear cart</button>
-                        </div>
-                        <div className='total-cart'>
-                            <h3>Total: ${cartTotal.toFixed(2)}</h3>
-                            <button className='btn btn-dark'>Complete Order</button>
-                        </div>
+                                <div className="controls-cart">
+                                    <button className='btn btn-danger' onClick={() => remove(item.id)}>Remove</button>
+                                </div>
+                            </div>
+                        ))}
+                        <button className="btn btn-warning clear-cart-btn" onClick={clear}>Clear cart</button>
                     </div>
-                </>
+                    <div className='total-cart'>
+                        <h3>Total: ${cartTotal.toFixed(2)}</h3>
+                        <button className='btn btn-dark checkout-btn'>Complete Order</button>
+                    </div>
+                </div>
             )}
         </div>
     );
