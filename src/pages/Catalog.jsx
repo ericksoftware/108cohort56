@@ -1,16 +1,41 @@
 import Product from "../components/Product";
 import "./Catalog.css";
-import { mock_categories } from '../assets/services/DaraService';
-import { useState, useContext } from "react";
+import DaraService, { mock_categories } from '../assets/services/DaraService';
+import { useState, useContext, useEffect } from "react";
 import DataContext from "../state/DataContext";
 
 function Catalog() {
     const [filter, setFilter] = useState();
     const { products } = useContext(DataContext);
+    const [allProducts, setAllProducts] = useState([]); // Initialize as empty array
+    const [categories, setCategories] = useState([]);
 
-    const filteredProducts = filter 
-        ? products.filter(item => item.category === filter)
-        : products;
+    async function loadProducts() {
+        try {
+            const products = await DaraService.getCatalog();
+            setAllProducts(Array.isArray(products) ? products : []);
+        } catch (error) {
+            console.error("Error loading products:", error);
+            setAllProducts([]);
+        }
+    }
+
+    async function loadCategories() {
+        try {
+            const categories = await DaraService.getCategories();
+            setCategories(Array.isArray(categories) ? categories : []);
+        } catch (error) {
+            console.error("Error loading categories:", error);
+            setCategories([]);
+        }
+    }
+
+    useEffect(function() {
+        loadProducts();
+        loadCategories();
+    }, []);
+
+    const productsToDisplay = allProducts.length > 0 ? allProducts : products;
 
     return (
         <div className="catalog">
@@ -19,26 +44,27 @@ function Catalog() {
 
                 <div className="filters">
                     <h2>Categories</h2>
-                    {mock_categories.map(cat => (
-                        <button
-                            key={cat}
-                            onClick={() => setFilter(cat)}
-                            className="btn btn-sm btn-dark">
-                            {cat}
+                    {categories.map((category, index) => (
+                        <button 
+                            key={index} 
+                            onClick={() => setFilter(category)}
+                            className={`btn btn-sm ${filter === category ? "btn-primary" : "btn-light"}`}>
+                            {category}
                         </button>
                     ))}
                     <button 
-                        onClick={() => setFilter(null)}
-                        className="btn btn-sm btn-light">
-                        Clear Filter
+                        onClick={() => setFilter("all")}
+                        className={`btn btn-sm ${filter === "all" ? "btn-primary" : "btn-light"}`}>
+                        All
                     </button>
                 </div>
 
                 <div className="list">
-                    {filteredProducts.map((item) => (
-                        <div className="product" key={item.id}>
-                            <Product data={item} />
-                        </div>
+                    {productsToDisplay.filter(product => !filter || product.category === filter).map(product => (
+                        <Product
+                         key={product.id}
+                         data={product}  
+                        />
                     ))}
                 </div>
             </div>
